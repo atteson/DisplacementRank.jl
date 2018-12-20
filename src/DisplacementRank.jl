@@ -1,3 +1,4 @@
+module DisplacementRank
 
 abstract type DisplacementRankMatrix{T <: Number} end
 
@@ -7,3 +8,5 @@ end
 
 Base.getindex( M::ToeplitzMatrix{T}, i::U, j::U ) where { T, U <: Integer } =
     M.entries[div(length(M.entries)+1,2) + i - j]    
+
+end # module
