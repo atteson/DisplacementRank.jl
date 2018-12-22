@@ -35,4 +35,13 @@ function convolve( u::AbstractVector{T}, v::AbstractVector{T} ) where {T <: Numb
     return w[1:h]
 end
 
+function convolve!( u::AbstractVector{Complex{T}},
+                   v::AbstractVector{Complex{T}},
+                   w::AbstractVector{Complex{T}} ) where {T <: Number}
+    fft!( u )
+    fft!( v )
+    w[1:32] = u .* v
+    ifft!( w )
+end
+
 end # module
