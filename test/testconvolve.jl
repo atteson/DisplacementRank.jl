@@ -55,3 +55,5 @@ plan = plan_fft( u )
 u2 = copy(u)
 using LinearAlgebra
 @time mul!( u2, plan, u );
+
+f = rand(10)
