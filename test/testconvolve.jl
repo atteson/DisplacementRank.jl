@@ -57,3 +57,4 @@ using LinearAlgebra
 @time mul!( u2, plan, u );
 
 f = rand(10)
+u = ifft(f)
